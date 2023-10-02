@@ -3,7 +3,7 @@ NAME	=	horde
 SRCS	=	main.cpp	\
 			Zombie.cpp \
 			zombieHorde.cpp \
-		
+
 OBJ =	${SRCS:.cpp=.o}
 
 CC =	c++

@@ -1,9 +1,6 @@
-NAME	=	braiinzz
+NAME	=	replace
 
 SRCS	=	main.cpp	\
-			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
 
 OBJ =	${SRCS:.cpp=.o}
 

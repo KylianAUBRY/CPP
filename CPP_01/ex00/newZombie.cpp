@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyaubry <kyaubry@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kylian <kylian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 14:47:24 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/08/26 15:17:47 by kyaubry          ###   ########.fr       */
+/*   Created: 2023/08/27 11:06:24 by kylian            #+#    #+#             */
+/*   Updated: 2023/08/27 11:14:03 by kylian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name)
-{
-	Zombie *zombie;
-	zombie = new Zombie(name);
-	return zombie;
+Zombie* newZombie(std::string name){
+	Zombie *zombie_heap;
+
+	zombie_heap = new Zombie(name);
+	return zombie_heap;
 }

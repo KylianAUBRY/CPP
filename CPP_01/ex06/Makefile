@@ -1,9 +1,7 @@
-NAME	=	braiinzz
+NAME	=	HarlFilter
 
 SRCS	=	main.cpp	\
-			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
+			Harl.cpp \
 
 OBJ =	${SRCS:.cpp=.o}
 

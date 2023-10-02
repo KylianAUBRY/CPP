@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyaubry <kyaubry@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kylian <kylian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 16:00:16 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/08/26 16:35:19 by kyaubry          ###   ########.fr       */
+/*   Created: 2023/08/27 11:30:31 by kylian            #+#    #+#             */
+/*   Updated: 2023/08/27 11:33:22 by kylian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int main(void)
 {
-	Zombie *horde_zombie;
-	int nb_zombie = 1;
+	int nb_Zombie = 10;
+	Zombie *hordeZombie;
 
-	horde_zombie = zombieHorde(nb_zombie ,"jj le zombie");
-	for (int i = 0; i < nb_zombie; i++)
-		horde_zombie[i].announce();
-	delete[] horde_zombie;
+	hordeZombie = zombieHorde(nb_Zombie ,"Horde");
+	for (int i = 0; i < nb_Zombie; i++)
+		hordeZombie[i].announce();
+	delete[] hordeZombie;
+	return 0;
 }

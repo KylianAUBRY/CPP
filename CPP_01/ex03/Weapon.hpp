@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyaubry <kyaubry@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kylian <kylian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 17:25:15 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/08/26 17:37:28 by kyaubry          ###   ########.fr       */
+/*   Created: 2023/08/27 11:47:37 by kylian            #+#    #+#             */
+/*   Updated: 2023/08/27 12:28:50 by kylian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
 
-class Weapon {
+class Weapon{
 	private :
 		std::string type;
-	
 	public :
-		const std::string &getType();
+		Weapon(std::string type_name);
+		~Weapon();
+		const std::string& getType(void);
+		void setType(std::string value_for_type);
 };
 
 #endif

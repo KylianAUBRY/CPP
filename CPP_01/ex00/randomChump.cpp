@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyaubry <kyaubry@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kylian <kylian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 14:47:23 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/08/26 16:10:44 by kyaubry          ###   ########.fr       */
+/*   Created: 2023/08/27 11:06:22 by kylian            #+#    #+#             */
+/*   Updated: 2023/08/27 11:18:33 by kylian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 void randomChump(std::string name){
-	Zombie zombie(name);
-	zombie.announce();
+	Zombie zombie_stack(name);
+	zombie_stack.announce();
 }

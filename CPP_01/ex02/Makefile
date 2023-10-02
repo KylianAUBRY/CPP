@@ -1,7 +1,7 @@
 NAME	=	brain
 
 SRCS	=	main.cpp	\
-		
+
 OBJ =	${SRCS:.cpp=.o}
 
 CC =	c++
