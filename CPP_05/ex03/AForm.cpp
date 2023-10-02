@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kylian <kylian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 13:55:23 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/09/30 11:42:45 by kylian           ###   ########.fr       */
+/*   Updated: 2023/09/30 11:47:38 by kylian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::~Form() {}
+AForm::~AForm() {}
 
-Form::Form(std::string const &name, int sign, int exec) : _name(name), _requiredSigned(sign), _requiredExec(exec)
+AForm::AForm(std::string const &name, int sign, int exec) : _name(name), _requiredSigned(sign), _requiredExec(exec)
 {
 	this->_isSigned = false;
 	if (sign < 1 || exec < 1)
@@ -23,48 +23,53 @@ Form::Form(std::string const &name, int sign, int exec) : _name(name), _required
 		throw GradeTooLowException();
 }
 
-Form::Form(const Form &other) : _name(other._name), _isSigned(other._isSigned), _requiredExec(other._requiredExec), _requiredSigned(other._requiredSigned)
+AForm::AForm(AForm const &other) : _name(other._name), _isSigned(other._isSigned), _requiredExec(other._requiredExec), _requiredSigned(other._requiredSigned)
 {
 	*this = other;
 }
 
-Form &Form::operator=(const Form &other)
+AForm &AForm::operator=(AForm const &other)
 {
 	std::cout << "you can't copy anything everything is constant\n";
 	return *this;
 }
 
-const char *Form::GradeTooLowException::what() const throw()
+const char *AForm::GradeTooLowException::what() const throw()
 {
 	return "The grade is too small.";
 }
 
-const char *Form::GradeTooHighException::what() const throw()
+const char *AForm::GradeTooHighException::what() const throw()
 {
 	return "The grade is too big.";
 }
 
-std::string const &Form::getName() const
+const char *AForm::FormNotSignedException::what() const throw()
+{
+	return "The form is not signed.";
+}
+
+std::string const &AForm::getName() const
 {
 	return this->_name;
 }
 
-bool const &Form::getIsSigned() const
+bool const &AForm::getIsSigned() const
 {
 	return this->_isSigned;
 }
 
-int const &Form::getRequiredSigned() const
+int const &AForm::getRequiredSigned() const
 {
 	return this->_requiredSigned;
 }
 
-int const &Form::getRequiredExec() const
+int const &AForm::getRequiredExec() const
 {
 	return this->_requiredExec;
 }
 
-void Form::beSigned(Bureaucrat bureaucrat)
+void AForm::beSigned(Bureaucrat bureaucrat)
 {
 	if (bureaucrat.getGrade() <= this->_requiredSigned)
 		_isSigned = true;
@@ -73,7 +78,7 @@ void Form::beSigned(Bureaucrat bureaucrat)
 }
 
 
-std::ostream& operator<<(std::ostream& out, const Form& form)
+std::ostream& operator<<(std::ostream& out, const AForm& form)
 {
 	out << form.getName() << ": " << "isSigned : " << form.getIsSigned() << '\n';
 	for (int i = 0; i <= form.getName().length() + 2; i++)

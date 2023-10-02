@@ -6,7 +6,7 @@
 /*   By: kylian <kylian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 12:23:49 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/09/30 10:42:38 by kylian           ###   ########.fr       */
+/*   Updated: 2023/10/02 09:15:12 by kylian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <string>
 # include <stdexcept>
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -42,7 +42,8 @@ class Bureaucrat
 		};
 		void increment();
 		void decrement();
-		void signForm(Form form) const;
+		void signForm(AForm &form) const;
+		void executeForm(AForm const &form);
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& Bureaucrat);

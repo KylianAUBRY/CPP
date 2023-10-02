@@ -66,6 +66,7 @@ int main()
 			std::cout << test3;
 			test3.signForm(form3);
 			test3.increment();
+			std::cout << test3;
 			test3.signForm(form3);
 		}
 		catch (std::exception& e)
