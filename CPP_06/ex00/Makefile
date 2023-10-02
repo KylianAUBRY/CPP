@@ -1,6 +1,7 @@
 NAME	=	a.out
 
-SRCS	=	ScalarConverter.cpp \
+SRCS	=	main.cpp \
+			ScalarConverter.cpp \
 		
 OBJ =	${SRCS:.cpp=.o}
 
