@@ -6,7 +6,7 @@
 /*   By: kyaubry <kyaubry@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:12:38 by kyaubry           #+#    #+#             */
-/*   Updated: 2023/10/11 12:12:39 by kyaubry          ###   ########.fr       */
+/*   Updated: 2023/10/11 15:03:40 by kyaubry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,20 @@
 # include <stack>
 # include <deque>
 
+template<typename T>
+class MutantStack : public std::stack<T>
+{
+	public :
+		MutantStack() {};
+		~MutantStack() {};
+		MutantStack(const MutantStack &other) {*this = other; };
+		MutantStack &operator=(const MutantStack &other) {
+			std::stack<T>::operator=(other);
+			return *this;
+		}
+
+		typedef typename std::stack<T>::container_type::iterator iterator;
+
+		iterator begin() {return this->c.begin();}
+		iterator end() {return this->c.end();}
+};
