@@ -1,6 +1,7 @@
-NAME	=	a.out
+NAME	=	PmergeMe
 
 SRCS	=	main.cpp \
+		PmergeMe.cpp \
 		
 OBJ =	${SRCS:.cpp=.o}
 
